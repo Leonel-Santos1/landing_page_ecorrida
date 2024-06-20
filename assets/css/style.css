@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte);
+}
+
+:root {
+    --background: #F3FEE7;
+    --background-destaque: #1A2E05;
+    --botoes-e-titulos: #477C0F;
+    --botoes-e-titulos-hover: #639337;
+    --texto-conteudo: #526077;
+    --texto-botao: #f6f7f9;
+    --texto-destaque: #FFF;
+    --fonte: "Inter", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.56);
+}
+
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-destaque);
+    padding: 1rem;
+}
+
+.form-image img{
+    width: 25rem;
+}
+
+.form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+.form-header{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-button{
+    display: flex;
+    align-items: center;
+}
+
+.login-button button{
+    border: none;
+    background-color: var(--botoes-e-titulos);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover{
+    background-color: var(--botoes-e-titulos-hover);
+}
+
+.login-button button a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-header h1::after{
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: var(--background-destaque);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 1rem 0;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input, select{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box input:hover,
+.input-box select:hover{
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible,
+.input-box select:focus-visible{
+    outline: 1px solid var(--background-destaque);
+}
+
+.input-box label,
+.gender-title h6{
+    font-size: 0.80rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.input-box input::placeholder{
+    color: #000000be;
+}
+
+.gender-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 0.5rem;
+}
+
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+
+.gender-group input{
+    margin-right: 0.35rem;
+}
+
+.gender-input label{
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.cadastrar-button button{
+    width: 100%;
+    margin-top: 4rem;
+    border: none;
+    background-color: var(--botoes-e-titulos);
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cadastrar-button button:hover{
+    background-color: var(--botoes-e-titulos-hover);
+}
+.cadastrar-button button a{
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media screen and (max-width: 1330px){
+    .form-image{
+        display: none;
+    }
+
+    .container{
+        width: 50%;
+    }
+
+    .form{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1121px) {
+    .container{
+        width: 90%;
+        height: auto;
+    }
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 10rem;
+        padding-right: 5rem;
+        padding-left: 0.1rem;
+    }
+
+    .gender-inputs{
+        margin-top: 2rem;
+    }
+    .gender-group{
+        flex-direction: column;
+    }
+    .gender-input{
+        margin-top: 0.5rem;
+    }
+
+}

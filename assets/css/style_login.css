@@ -1,0 +1,19 @@
+
+
+.form form{
+    width: 17rem;
+}
+
+.form-image img{
+    width: 35rem;
+}
+
+.text-welcome{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.input-group{
+    flex-direction: column;
+}
+

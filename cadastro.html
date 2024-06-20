@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../LandingPage/landing-page-inova/assets/css/style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+<div class="container">
+    <div class="form-image">
+        <img src="../../LandingPage/landing-page-inova/assets/img/undraw_video_games_x1tr.svg">
+    </div>
+    <div class="form">
+        <form action="#">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastre-se</h1>
+                </div>
+                <div class="login-button">
+                    <button><a href="login.html">Entrar</a></button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="firstname">Primeiro nome: </label>
+                    <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="lastname">Sobrenome: </label>
+                    <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="username">Nome de usuário: </label>
+                    <input id="username" type="text" name="username" placeholder="Digite seu nome de usuário" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">E-mail: </label>
+                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="age">Idade: </label>
+                    <input id="age" type="number" name="age" placeholder="Digite a sua idade" min="0" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Senha: </label>
+                    <input id="password" type="password" name="password" placeholder="Digite a sua senha"required>
+                </div>
+
+                <div class="input-box">
+                    <label for="grauEscolaridade">Selecione o grau de escolaridade: </label>
+                    <select id="grauEscolaridade" required>
+                        <option value="1">Ensino Médio incompleto</option>
+                        <option value="2">Ensino Médio completo</option>
+                        <option value="3">Graduação incompleta</option>
+                        <option value="4">Graduação completa</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="gender-inputs">
+
+                <div class="gender-title">
+                    <h6>Gênero</h6>
+                </div>
+
+                <div class="gender-group">
+                    <div class="gender-input">
+                        <input type="radio" id="famale" name="gender">
+                        <label for="famale">Feminino</label>
+                    </div>
+                    <div class="gender-input">
+                        <input type="radio" id="male" name="gender">
+                        <label for="male">Masculino</label>
+                    </div>
+                    <div class="gender-input">
+                        <input type="radio" id="others" name="gender">
+                        <label for="others">Outros</label>
+                    </div>
+                    <div class="gender-input">
+                        <input type="radio" id="none" name="gender">
+                        <label for="none">Nenhum</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cadastrar-button">
+                <button><a href="#">Cadastrar</a></button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
