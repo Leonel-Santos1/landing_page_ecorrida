@@ -15,6 +15,11 @@
     --texto-botao: #f6f7f9;
     --texto-destaque: #FFF;
     --fonte: "Inter", sans-serif;
+    --degrade-botao-escuro: #1A2E05;
+    --degrade-botao-medio: #5AA30D;
+    --degrade-botao-claro: #ADF264;
+    --degrade-borda-escuro: #73CC16;
+    --degrade-borda-claro: #E4FCCB;
 }
 
 header {
@@ -46,7 +51,7 @@ header {
 
 .botao:hover {
     scale: 1.05;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .cadastro, .login {
@@ -55,13 +60,24 @@ header {
     width: 160px;
 }
 
-.cadastro {
+.login {
     color: var(--texto-destaque);
     border: 2px solid #FFF;
 }
 
-.login {
+.login:hover {
+    background-image: linear-gradient(to right, var(--degrade-botao-claro), var(--degrade-botao-medio));
+    border: 0px;
+    transition: 1s;
+}
+
+.cadastro {
     background-color: var(--botoes-e-titulos);
+}
+
+.cadastro:hover {
+    background: linear-gradient(to right, var(--degrade-botao-medio), var(--degrade-botao-claro)) border-box;
+    transition: 1s;
 }
 
 body {
@@ -91,6 +107,13 @@ body {
     height: 50px;
     width: 255px;
     background-color: var(--botoes-e-titulos);
+}
+
+.botao-conteudo:hover, .botao-destaque:hover {
+    background-image: linear-gradient(to right, var(--degrade-botao-medio), var(--degrade-botao-claro));
+    color: var(--background-destaque);
+    font-weight: bold;
+    transition: 0.5s;
 }
 
 .imagem {
