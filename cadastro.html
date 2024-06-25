@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -13,10 +13,10 @@
     <div class="form-image">
         <h2>Bem-vindo ao Mangue Runner!</h2>
         <p>Junte-se a nós e ajude a salvar o meio ambiente enquanto se diverte.</p>
-        <img src="assets/img/página%20de%20login%20e%20cadastro.png">
+        <img src="../assets/img/página%20de%20login%20e%20cadastro.png">
     </div>
     <div class="form">
-        <form action="#">
+        <form id="registerForm" action="/api/auth/register" method="POST">
             <div class="form-header">
                 <div class="title">
                     <h1>Cadastre-se</h1>
@@ -54,52 +54,91 @@
 
                 <div class="input-box">
                     <label for="password">Senha: </label>
-                    <input id="password" type="password" name="password" placeholder="Digite a sua senha"required>
+                    <input id="password" type="password" name="password" placeholder="Digite a sua senha" required>
                 </div>
 
                 <div class="input-box">
-                    <label for="grauEscolaridade">Selecione o grau de escolaridade: </label>
-                    <select id="grauEscolaridade" required>
+                    <label for="educationLevel">Selecione o grau de escolaridade: </label>
+                    <select id="educationLevel" name="educationLevel" required>
                         <option value="1">Ensino Médio incompleto</option>
                         <option value="2">Ensino Médio completo</option>
                         <option value="3">Graduação incompleta</option>
                         <option value="4">Graduação completa</option>
                     </select>
                 </div>
-
             </div>
 
             <div class="gender-inputs">
-
                 <div class="gender-title">
                     <h6>Gênero</h6>
                 </div>
-
                 <div class="gender-group">
                     <div class="gender-input">
-                        <input type="radio" id="famale" name="gender">
-                        <label for="famale">Feminino</label>
+                        <input type="radio" id="female" name="gender" value="Feminino" required>
+                        <label for="female">Feminino</label>
                     </div>
                     <div class="gender-input">
-                        <input type="radio" id="male" name="gender">
+                        <input type="radio" id="male" name="gender" value="Masculino">
                         <label for="male">Masculino</label>
                     </div>
                     <div class="gender-input">
-                        <input type="radio" id="others" name="gender">
+                        <input type="radio" id="others" name="gender" value="Outros">
                         <label for="others">Outros</label>
                     </div>
                     <div class="gender-input">
-                        <input type="radio" id="none" name="gender">
+                        <input type="radio" id="none" name="gender" value="Nenhum">
                         <label for="none">Nenhum</label>
                     </div>
                 </div>
-
             </div>
+
             <div class="cadastrar-button">
-                <button><a href="#">Cadastrar</a></button>
+                <button type="submit">Cadastrar</button>
             </div>
         </form>
     </div>
 </div>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+    
+        const formData = {
+            firstname: document.getElementById('firstname').value,
+            lastname: document.getElementById('lastname').value,
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            age: parseInt(document.getElementById('age').value),
+            password: document.getElementById('password').value,
+            educationLevel: document.getElementById('educationLevel').value,
+            gender: document.querySelector('input[name="gender"]:checked').value
+        };
+    
+        try {
+            console.log('Enviando dados:', JSON.stringify(formData)); // Log para depuração
+    
+            const response = await fetch('http://127.0.0.1:5000/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Erro ao cadastrar usuário');
+            }
+    
+            const data = await response.json();
+            console.log('Usuário cadastrado com sucesso. Token:', data.token);
+            alert('Usuário cadastrado com sucesso');
+            window.location.href = 'login.html'; // Redirecionar para a página de login
+        } catch (error) {
+            console.error('Erro:', error);
+            alert(error.message);
+        }
+    });
+    </script>
+    
 </body>
 </html>
