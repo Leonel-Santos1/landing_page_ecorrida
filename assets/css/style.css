@@ -9,7 +9,7 @@
 
 :root {
     --background: #F3FEE7;
-    --background-destaque: #1A2E05;
+    --background-destaque: #477C0F;
     --botoes-e-titulos: #477C0F;
     --botoes-e-titulos-hover: #639337;
     --texto-conteudo: #526077;
@@ -39,10 +39,22 @@ body{
 .form-image{
     width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 24px;
     background-color: var(--background-destaque);
     padding: 1rem;
+    color: var(--texto-destaque);
+}
+
+.form-image h2{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.form-image img{
+    border-radius: 10px;
 }
 
 .form-image img{

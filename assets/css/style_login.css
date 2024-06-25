@@ -1,14 +1,15 @@
 
 .container{
-    margin-top: 12rem;
+    margin-top: 6rem;
+}
+
+.form-image, form{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
 .form form{
     width: 17rem;
-}
-
-.form-image img{
-    width: 35rem;
 }
 
 .text-welcome{

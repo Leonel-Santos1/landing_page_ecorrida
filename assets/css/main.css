@@ -30,6 +30,10 @@ header {
     padding: 25px 7rem;
 }
 
+.logo{
+    width: 160px;
+    height: 50px;
+}
 
 .header-botoes {
     display: flex;
@@ -119,6 +123,7 @@ body {
 .imagem {
     width: 540px;
     height: 380px;
+    border-radius: 10px;
 }
 
 ul {
